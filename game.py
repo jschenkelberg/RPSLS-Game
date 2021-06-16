@@ -9,8 +9,7 @@ player = Player()
 class Game:
     def __init__(self):
         self.player_one = Human()
-        self.player_two = ???
-
+        self.player_two = None
 
 
     def run_game(self):
@@ -48,9 +47,9 @@ class Game:
     def choose_game_mode(self):
         print("\nHow many players?")
         response = input()
-        if response == 1:
+        if int(response) == 1:
             self.player_two = Ai()
-        elif response == 2:
+        elif int(response) == 2:
             self.player_two = Human()
 
 
@@ -58,12 +57,17 @@ class Game:
 
 
     def round(self):
+
+        print("Player One's turn!\n")
         self.player_one.choose_gesture()
+        print("\nPlayer Two's turn!")
         self.player_two.choose_gesture()
         result = (self.player_one.chosen_gesture - self.player_two.chosen_gesture) %5
         if result == 0:
             print("Player One and Player Two tie!")
         elif result >= 3:
             print("Player Two wins")
+            
         else:
             print("Player One wins!")
+
