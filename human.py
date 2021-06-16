@@ -12,7 +12,7 @@ class Human(Player):
         self.gestures[2] = 2
         self.gestures[3] = 3
         self.gestures[4] = 4
-        response = input(f"Pick a gesture: rock, spock, paper, lizard, or scissors.")
+        response = input(f"Pick a gesture: rock, paper, scissors, lizard, or spock.")
         if response == "rock":
             self.chosen_gesture = 0
         elif response == "spock":

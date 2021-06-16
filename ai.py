@@ -15,12 +15,12 @@ class Ai(Player):
         self.gestures[4] = 4
         self.chosen_gesture = random.randint(0, 4)
         if self.chosen_gesture == 0:
-            print("Player 2 picks rock.")
+            print("Computer picks rock.")
         elif self.chosen_gesture == 1:
-            print("Player 2 picks spock.")
+            print("Computer picks spock.")
         elif self.chosen_gesture == 2:
-            print("Player 2 picks paper.")
+            print("Computer picks paper.")
         elif self.chosen_gesture == 3:
-            print("Player 2 picks lizard.")
+            print("Computer picks lizard.")
         elif self.chosen_gesture == 4:
-            print("Player 2 picks scissors.")
+            print("Computer picks scissors.")
