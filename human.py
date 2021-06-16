@@ -4,6 +4,7 @@ from player import Player
 class Human(Player):
     def __init__(self):
         self.name = ""
+        self.score = 0
         super().__init__()
 
     def choose_gesture(self):

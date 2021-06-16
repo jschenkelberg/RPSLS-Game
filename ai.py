@@ -5,6 +5,7 @@ import random
 class Ai(Player):
     def __init__(self):
         self.name = "Computer"
+        self.score = 0
         super().__init__()
 
     def choose_gesture(self):
@@ -24,3 +25,4 @@ class Ai(Player):
             print("Computer picks lizard.")
         elif self.chosen_gesture == 4:
             print("Computer picks scissors.")
+
