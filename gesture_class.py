@@ -11,6 +11,16 @@ class GesturesClass:
         self.lizard = 3
         self.scissors = 4
 
-    def chosen_gesture_hierarchy(self):
-        pass
+
+    def gesture_victories(self):
+        victories = {
+            self.rock: [self.scissors, self.lizard],
+            self.spock: [self.scissors, self.rock],
+            self.paper: [self.spock, self.rock],
+            self.lizard: [self.spock, self.paper],
+            self.scissors: [self.paper, self.lizard]
+        }
+
+
+
 

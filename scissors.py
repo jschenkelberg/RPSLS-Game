@@ -4,7 +4,7 @@ from player import Player
 
 player = Player()
 
-gestures_class = GesturesClass()
+gestures = GesturesClass()
 
 
 class Scissors(GesturesClass):
@@ -13,4 +13,4 @@ class Scissors(GesturesClass):
         super().__init__()
 
     def scissors_win(self):
-        gestures_class.scissors.win == gestures_class.paper or gestures_class.lizard
+        gestures.scissors.win == gestures.paper or gestures.lizard

@@ -4,11 +4,19 @@ from human import Human
 
 from player import Player
 
-from gesture_class import Gestures
+from gesture_class import GesturesClass
 
+gesture_class = GesturesClass()
 
 player = Player()
 
+victories = {
+    gesture_class.rock: [gesture_class.scissors, gesture_class.lizard],
+    gesture_class.spock: [gesture_class.scissors, gesture_class.rock],
+    gesture_class.paper: [gesture_class.spock, gesture_class.rock],
+    gesture_class.lizard: [gesture_class.spock, gesture_class.paper],
+    gesture_class.scissors: [gesture_class.paper, gesture_class.lizard]
+}
 
 class Game:
     def __init__(self):
@@ -19,11 +27,11 @@ class Game:
         self.welcome_message()
         self.game_rules()
         self.choose_game_mode()
-        self.round()
-        # self.complicated_round()
+        # self.round()
+        self.gesture_class_round()
         self.declare_winner()
         # self.play_again()
-        # Play Again? - not MVP
+
 
     def welcome_message(self):
         print("Welcome to Rock Paper Scissor Lizard Spock.")
@@ -60,10 +68,64 @@ class Game:
                 self.player_one.score += 1
 
     def gesture_class_round(self):
-        print("\nPlayer One's turn!")
-        self.player_one.choose_gesture_class()
-        print("\nPlayer Two's turn!")
-        self.player_two.choose_gesture_class()
+        while self.player_one.score < 2 and self.player_two.score < 2:
+            print("\nPlayer One's turn!")
+            self.player_one.choose_gesture_class()
+            print("\nPlayer Two's turn!")
+            self.player_two.choose_gesture_class()
+            if self.player_one.chosen_gesture == self.player_two.chosen_gesture:
+                print("Players have tied.")
+            # victories[self.player_one.chosen_gesture]
+            elif self.player_one.chosen_gesture in victories[self.player_two.chosen_gesture]:
+                print("Player Two Wins!")
+                self.player_two.score += 1
+            else:
+                print("Player One Wins")
+                self.player_one.score += 1
+            # elif self.player_one.chosen_gesture == gesture_class.rock:
+            #     if self.player_two.chosen_gesture == gesture_class.scissors or gesture_class.lizard:
+            #         print("Player One Wins!")
+            #         self.player_one.score += 1
+            #     else:
+            #         continue
+            # elif self.player_one.chosen_gesture:
+            #     if self.player_two.chosen_gesture == gesture_class.scissors or gesture_class.rock:
+            #         print("Player One Wins!")
+            #         self.player_one.score += 1
+            # elif self.player_one.chosen_gesture:
+            #     if self.player_two.chosen_gesture == gesture_class.spock or gesture_class.rock:
+            #         print("Player One Wins!")
+            #         self.player_one.score += 1
+            # elif self.player_one.chosen_gesture:
+            #     if self.player_two.chosen_gesture == gesture_class.spock or gesture_class.paper:
+            #         print("Player One Wins!")
+            #         self.player_one.score += 1
+            # elif self.player_one.chosen_gesture:
+            #     if self.player_two.chosen_gesture == gesture_class.paper or gesture_class.lizard:
+            #         print("Player One Wins!")
+            #         self.player_one.score += 1
+            #
+            # elif self.player_two.chosen_gesture:
+            #     if self.player_one.chosen_gesture == gesture_class.scissors or gesture_class.lizard:
+            #         print("Player Two Wins!")
+            #         self.player_two.score += 1
+            # elif self.player_two.chosen_gesture:
+            #     if self.player_one.chosen_gesture == gesture_class.scissors or gesture_class.rock:
+            #         print("Player Two Wins!")
+            #         self.player_two.score += 1
+            # elif self.player_two.chosen_gesture:
+            #     if self.player_one.chosen_gesture == gesture_class.spock or gesture_class.rock:
+            #         print("Player Two Wins!")
+            #         self.player_two.score += 1
+            # elif self.player_two.chosen_gesture:
+            #     if self.player_one.chosen_gesture == gesture_class.spock or gesture_class.paper:
+            #         print("Player Two Wins!")
+            #         self.player_two.score += 1
+            # elif self.player_two.chosen_gesture:
+            #     if self.player_one.chosen_gesture == gesture_class.paper or gesture_class.lizard:
+            #         print("Player Two Wins!")
+            #         self.player_two.score += 1
+
 
     def declare_winner(self):
         if self.player_one.score == 2:
@@ -71,14 +133,14 @@ class Game:
         elif self.player_two.score == 2:
             print("\n###Player Two has won RPSlS!!###\n")
 
-    def play_again(self):
-        while True:
-            replay_answer = input("Do you want to play again?(y/n)")
-            if replay_answer == "y":
-                self.run_game()
-                break
-            elif replay_answer == "n":
-                print("Thank you for playing!")
-                break
-            else:
-                print("That is not a valid response. Please try again.")
+    # def play_again(self):
+    #     while True:
+    #         replay_answer = input("Do you want to play again?(y/n)")
+    #         if replay_answer == "y":
+    #             self.run_game()
+    #             break
+    #         elif replay_answer == "n":
+    #             print("Thank you for playing!")
+    #             break
+    #         else:
+    #             print("That is not a valid response. Please try again.")

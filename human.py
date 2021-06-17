@@ -2,6 +2,16 @@ from player import Player
 
 from gesture_class import GesturesClass
 
+from rock import Rock
+
+from spock import Spock
+
+from paper import Paper
+
+from lizard import Lizard
+
+from scissors import Scissors
+
 gesture_class = GesturesClass()
 
 class Human(Player):

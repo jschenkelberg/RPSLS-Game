@@ -2,12 +2,14 @@ from gesture_class import GesturesClass
 
 from player import Player
 
+
+
 player = Player()
 
 gestures_class = GesturesClass()
 
 
-class Paper(Gestures):
+class Paper(GesturesClass):
     def __init__(self):
         self.win = bool
         super().__init__()
