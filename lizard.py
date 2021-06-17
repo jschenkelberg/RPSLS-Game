@@ -1,10 +1,10 @@
-from gestures import Gestures
+from gesture_class import GesturesClass
 
 from player import Player
 
 player = Player()
 
-gestures = Gestures()
+gestures_class = GesturesClass()
 
 
 class Lizard(Gestures):
@@ -13,4 +13,4 @@ class Lizard(Gestures):
         super().__init__()
 
     def lizard_win(self):
-        self.win = player.gestures[1] or player.gestures[2]
+        gestures_class.lizard.win == gestures_class.spock or gestures_class.paper

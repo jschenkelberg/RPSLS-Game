@@ -1,10 +1,10 @@
-from gestures import Gestures
+from gesture_class import GesturesClass
 
 from player import Player
 
 player = Player()
 
-gestures = Gestures()
+gestures_class = GesturesClass()
 
 
 class Spock(Gestures):
@@ -13,4 +13,4 @@ class Spock(Gestures):
         super().__init__()
 
     def spock_win(self):
-        self.win = player.gestures[0] or player.gestures[4]
+        gestures_class.spock.win == gestures_class.scissors or gestures_class.rock

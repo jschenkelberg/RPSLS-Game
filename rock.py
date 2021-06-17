@@ -1,11 +1,11 @@
-from gestures import Gestures
+from gesture_class import GesturesClass
 
 
 from player import Player
 
 player = Player()
 
-gestures = Gestures()
+gestures_class = GesturesClass()
 
 
 class Rock(Gestures):
@@ -14,4 +14,4 @@ class Rock(Gestures):
         super().__init__()
 
     def rock_win(self):
-        self.win = player.gestures[3] or player.gestures[4]
+        gestures_class.rock.win == gestures_class.scissors or gestures_class.lizard
