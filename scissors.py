@@ -10,7 +10,9 @@ gestures = GesturesClass()
 class Scissors(GesturesClass):
     def __init__(self):
         self.win = bool
+        self.compare = gestures.paper or gestures.lizard
         super().__init__()
 
+
     def scissors_win(self):
-        gestures.scissors.win == gestures.paper or gestures.lizard
+        gestures.paper or gestures.lizard

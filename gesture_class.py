@@ -1,3 +1,4 @@
+
 from player import Player
 
 player = Player()
@@ -10,6 +11,7 @@ class GesturesClass:
         self.paper = 2
         self.lizard = 3
         self.scissors = 4
+        self.compare = int
 
 
     def gesture_victories(self):
@@ -21,6 +23,7 @@ class GesturesClass:
             self.scissors: [self.paper, self.lizard]
         }
 
-
+    def compare_for_win(self):
+        pass
 
 

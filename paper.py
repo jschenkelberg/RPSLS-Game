@@ -12,7 +12,8 @@ gestures_class = GesturesClass()
 class Paper(GesturesClass):
     def __init__(self):
         self.win = bool
+        self.compare = gestures_class.spock or gestures_class.rock
         super().__init__()
 
     def paper_win(self):
-        gestures_class.paper.win == gestures_class.spock or gestures_class.rock
+        gestures_class.spock or gestures_class.rock

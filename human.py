@@ -4,15 +4,9 @@ from gesture_class import GesturesClass
 
 from rock import Rock
 
-from spock import Spock
-
-from paper import Paper
-
-from lizard import Lizard
-
-from scissors import Scissors
-
 gesture_class = GesturesClass()
+
+rock = Rock()
 
 class Human(Player):
     def __init__(self):
@@ -43,16 +37,6 @@ class Human(Player):
             elif response == "scissors":
                 self.chosen_gesture = 4
                 break
-            # if self.chosen_gesture == 0:
-            #     print("Player picks rock.")
-            # elif self.chosen_gesture == 1:
-            #     print("Player picks spock.")
-            # elif self.chosen_gesture == 2:
-            #     print("Player picks paper.")
-            # elif self.chosen_gesture == 3:
-            #     print("Player picks lizard.")
-            # elif self.chosen_gesture == 4:
-            #     print("Player picks scissors.")
             else:
                 print("not valid selection, try again")
 
@@ -74,15 +58,5 @@ class Human(Player):
             elif response == "scissors":
                 self.chosen_gesture = gesture_class.scissors
                 break
-            # if self.chosen_gesture == 0:
-            #     print("Player picks rock.")
-            # elif self.chosen_gesture == 1:
-            #     print("Player picks spock.")
-            # elif self.chosen_gesture == 2:
-            #     print("Player picks paper.")
-            # elif self.chosen_gesture == 3:
-            #     print("Player picks lizard.")
-            # elif self.chosen_gesture == 4:
-            #     print("Player picks scissors.")
             else:
                 print("not valid selection, try again")
